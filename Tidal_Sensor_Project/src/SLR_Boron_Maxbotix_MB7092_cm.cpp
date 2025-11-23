@@ -72,7 +72,7 @@ const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 secon
  //If SECONDS_BETWEEN_MEASUREMENTS < 600, must use 
  //.network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
 // in sleep configuration to avoid reconnection penalty
-const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 300; // What should sampling period be?
+const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 10800; // 3 hours
 // ***** IMPORTANT!!! See note above this const.
 
 
@@ -82,7 +82,7 @@ void setup(void) {
   }
   else{
     Cellular.off();
-    delay(60); // turn off cellular for prelim testing (uncomment)
+    delay(3600); // 1 hour 
   }
 
   // delay(5000); // to see response from begin command

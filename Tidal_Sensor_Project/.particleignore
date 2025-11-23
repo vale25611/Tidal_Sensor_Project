@@ -1,0 +1,16 @@
+# ignore build artifacts
+target/
+build/
+.build/
+
+# editor / IDE
+.vscode/
+.DS_Store
+
+# local firmware blobs, large binaries
+*.bin
+*.elf
+
+# node / python deps if you have them
+node_modules/
+venv/

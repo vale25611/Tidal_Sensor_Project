@@ -1,0 +1,79 @@
+
+:::: COMPILING APPLICATION
+
+make -f /Users/valentina/.particle/toolchains/buildscripts/1.16.0/Makefile preprocess make-main create-bundle
+make[1]: Entering directory `/Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project'
+make[1]: warning: jobserver unavailable: using -j1.  Add `+' to parent make rule.
+make[1]: Nothing to be done for `preprocess'.
+cd "/Users/valentina/.particle/toolchains/deviceOS/6.3.4/main" && make all
+make[2]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/main'
+make -C ../modules/boron/user-part all
+make[3]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/modules/boron/user-part'
+
+mkdir -p /Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron/
+make -f ../../../modules/shared/nRF52840/build_linker_script.mk PREBUILD=1
+make[4]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/modules/boron/user-part'
+Creating /Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron/platform_user_ram.ld ...
+make[4]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/modules/boron/user-part'
+
+make -C ../../../user 
+make[4]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/user'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/user'
+make -C ../../../hal-dynalib 
+make[4]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/hal-dynalib'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/hal-dynalib'
+make -C ../../../services-dynalib 
+make[4]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/services-dynalib'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/services-dynalib'
+make -C ../../../system-dynalib 
+make[4]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/system-dynalib'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/system-dynalib'
+make -C ../../../rt-dynalib 
+make[4]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/rt-dynalib'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/rt-dynalib'
+make -C ../../../wiring 
+make[4]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/wiring'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/wiring'
+make -C ../../../communication-dynalib 
+make[4]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/communication-dynalib'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/communication-dynalib'
+make -C ../../../platform 
+make[4]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/platform'
+make -C ../third_party/nrf5_sdk 
+make[5]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/third_party/nrf5_sdk'
+make[5]: Nothing to be done for `all'.
+make[5]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/third_party/nrf5_sdk'
+make -C ../third_party/littlefs 
+make[5]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/third_party/littlefs'
+make[5]: Nothing to be done for `all'.
+make[5]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/third_party/littlefs'
+make -C ../third_party/miniz 
+make[5]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/third_party/miniz'
+make[5]: Nothing to be done for `all'.
+make[5]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/third_party/miniz'
+make[4]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/platform'
+make -C ../../../wiring_globals 
+make[4]: Entering directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/wiring_globals'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/wiring_globals'
+Building target: /Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron/Tidal_Sensor_Project.elf
+Invoking: ARM GCC C++ Linker
+mkdir -p /Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron/
+/Users/valentina/.particle/toolchains/gcc-arm/10.2.1/bin/arm-none-eabi-g++ -DMCU_DEVICE -DnRF52840 -DNRF52840_XXAA -DPLATFORM_THREADING=1 -DPLATFORM_ID=13 -DPLATFORM_NAME=boron -DPLATFORM_GEN=3 -DUSBD_VID_PARTICLE=0x2B04 -DUSBD_PID_DFU=0xD00D -DUSBD_PID_CDC=0xC00D -fno-builtin-puts -fno-builtin-printf -Wl,--wrap=puts -Wl,--wrap=printf -Wl,--wrap=_printf_i -Wl,--wrap=_svfprintf_r -Wl,--wrap=_scanf_i -Wl,--wrap=__ssvfscanf_r -g3 -gdwarf-2 -Os -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DARM_CPU_CORTEX_M4 --specs=nano.specs -DSOFTDEVICE_PRESENT=1 -DS140 -DINCLUDE_PLATFORM=1 -D_WIZCHIP_=W5500 -fno-builtin -DUSE_STDPERIPH_DRIVER -DDFU_BUILD_ENABLE -DLFS_CONFIG=lfs_config.h -DSYSTEM_VERSION_STRING=6.3.4 -DRELEASE_BUILD -Werror -Wextra -I../../../user/inc -I../../../dynalib/inc -I../../../hal/shared -I../../../services/inc -I../../../third_party/nanopb/nanopb -I../../../hal/inc -I../../../hal/src/boron -I../../../hal/network/lwip/cellular -I../../../hal/src/nRF52840 -I../../../hal/src/armv7 -I../../../hal/src/portable/FreeRTOS -I../../../hal/src/nRF52840 -I../../../hal/src/nRF52840/lwip -I../../../hal/src/nRF52840/freertos -I../../../hal/src/nRF52840/mbedtls -I../../../hal/src/nRF52840/littlefs -I../../../hal -I../../../hal/src/nRF52840/posix -I../../../hal/network -I../../../hal/network/api -I../../../hal/network/lwip -I../../../hal/network/lwip/posix -I../../../hal/network/lwip/wiznet -I../../../hal/network/ncp -I../../../hal/network/ncp/at_parser -I../../../hal/network/util -I../../../third_party/lwip/lwip/src/include -I../../../third_party/freertos/freertos/FreeRTOS/Source/include -I../../../third_party/nrf5_sdk/nrf5_sdk/external/freertos/portable/GCC/nrf52 -I../../../third_party/nrf5_sdk/nrf5_sdk/external/freertos/portable/CMSIS/nrf52 -I../../../third_party/wiznet_driver/wiznet_driver/Ethernet -I../../../gsm0710muxer/gsm0710muxer/include -I../../../hal/shared -I../../../system/inc -I../../../rt-dynalib/inc -I../../../wiring/inc -I../../../modules/shared/nRF52840/inc -I../../../platform/shared/inc -I../../../third_party/nrf5_sdk -I../../../third_party/nrf5_sdk/nrf5_sdk/components/toolchain/cmsis/include -I../../../third_party/nrf5_sdk/nrf5_sdk/modules/nrfx -I../../../third_party/nrf5_sdk/nrf5_sdk/modules/nrfx/drivers -I../../../third_party/nrf5_sdk/nrf5_sdk/modules/nrfx/drivers/include -I../../../third_party/nrf5_sdk/nrf5_sdk/modules/nrfx/hal -I../../../third_party/nrf5_sdk/nrf5_sdk/modules/nrfx/mdk -I../../../third_party/nrf5_sdk/nrf5_sdk/modules/nrfx/hal -I../../../third_party/nrf5_sdk/nrf5_sdk/modules/nrfx/drivers/src/prs -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/util -I../../../third_party/nrf5_sdk/nrf5_sdk/components/softdevice/s140/headers -I../../../third_party/nrf5_sdk/nrf5_sdk/components/softdevice/s140/headers/nrf52 -I../../../third_party/nrf5_sdk/nrf5_sdk/components/softdevice/common -I../../../third_party/nrf5_sdk/nrf5_sdk/components/softdevice/mbr/nrf52840/headers -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/fstorage -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/experimental_section_vars -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/atomic -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/crc32 -I../../../third_party/nrf5_sdk/nrf5_sdk/integration/nrfx/legacy -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/delay -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/log -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/log -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/log/src -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/experimental_section_vars -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/atomic -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/delay -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/queue -I../../../third_party/nrf5_sdk/nrf5_sdk/components/softdevice/common -I../../../third_party/nrf5_sdk/nrf5_sdk/components/softdevice/s140 -I../../../third_party/nrf5_sdk/nrf5_sdk/components/softdevice/s140/headers -I../../../third_party/nrf5_sdk/nrf5_sdk/components/softdevice/s140/headers/nrf52 -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/fifo -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/atomic_fifo -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/strerror -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/fstorage -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/atomic_flags -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/usbd -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/usbd/class/cdc -I../../../third_party/nrf5_sdk/nrf5_sdk/components/libraries/usbd/class/cdc/acm -I../../../third_party/nrf5_sdk/nrf5_sdk/components/ble/common -I../../../third_party/nrf5_sdk/nrf5_sdk/components/ble/nrf_ble_gatt -I../../../third_party/nrf5_sdk/nrf5_sdk/components/ble/ble_advertising -I../../../third_party/nrf5_sdk/nrf5_sdk/components/nfc/t2t_lib -I../../../third_party/nrf5_sdk/nrf5_sdk/components/nfc/platform -I../../../third_party/nrf5_sdk/nrf5_sdk/components/nfc/ndef/generic/message -I../../../third_party/nrf5_sdk/nrf5_sdk/components/nfc/ndef/generic/record -I../../../third_party/nrf5_sdk/nrf5_sdk/components/nfc/ndef/lauchapp -I../../../third_party/nrf5_sdk/nrf5_sdk/components/nfc/ndef/text -I../../../third_party/nrf5_sdk/nrf5_sdk/components/nfc/ndef/uri -I../../../third_party/nrf5_sdk/nrf5_sdk/external/nrf_cc310/include -I../../../third_party/nrf5_sdk/nrf5_sdk/external/utf_converter -I../../../third_party/littlefs/littlefs -I../../../third_party/miniz/miniz -I../../../platform/MCU/nRF52840/inc -I../../../modules/shared/nRF52840/inc/user-part -I. -MD -MP -MF /Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron/Tidal_Sensor_Project.elf.d -ffunction-sections -fdata-sections -Wall -Wno-switch -fmessage-length=0 -Wno-error=deprecated-declarations -Wno-error=unused-parameter -Wdeprecated-declarations -Wimplicit-fallthrough=2 -Wno-expansion-to-defined -Wno-cast-function-type -Wno-unused-parameter -Wno-error=type-limits -fno-strict-aliasing -DSPARK=1 -DPARTICLE=1 -Werror=return-type -Wundef -DSTART_DFU_FLASHER_SERIAL_SPEED=14400 -fno-builtin-malloc -fno-builtin-free -fno-builtin-realloc -DUSER_FIRMWARE_IMAGE_SIZE=0x40000 -DUSER_FIRMWARE_IMAGE_LOCATION=0xB4000 -DMODULAR_FIRMWARE=1 -DMODULE_VERSION=6 -DMODULE_FUNCTION=5 -DMODULE_INDEX=2 -DMODULE_DEPENDENCY=4,1,6305 -DMODULE_DEPENDENCY2=0,0,0 -D_GNU_SOURCE  /Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron//obj/./src/module_info.o /Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron//obj/./src/user_export.o /Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron//obj/./src/user_module.o /Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron//obj/./src/newlib_stubs.o --output /Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron/Tidal_Sensor_Project.elf -nostartfiles -Xlinker --gc-sections -Wl,--build-id -fno-use-cxa-atexit -fno-lto -L../../../build/arm/linker/nrf52840  -L../../../build/target/user/platform-13-m/Tidal_Sensor_Project/ -L../../../build/target/services-dynalib/platform-13-m/ -L../../../build/target/hal-dynalib/platform-13-m/ -L../../../build/target/system-dynalib/platform-13-m/ -L../../../build/target/rt-dynalib/platform-13-m/ -L../../../build/target/wiring/platform-13-m/ -L../../../build/target/communication-dynalib/platform-13-m/ -L../../../build/target/platform/platform-13-m/ -L../../../build/target/nrf5_sdk/platform-13-m/ -L../../../build/target/littlefs/platform-13-m/ -L../../../build/target/miniz/platform-13-m/ -L../../../build/target/wiring_globals/platform-13-m/ -L../../../build/target/nrf5_sdk/platform-13-m -L../../../build/target/littlefs/platform-13-m -L../../../build/target/miniz/platform-13-m -L../../../build/arm/linker -Wl,--whole-archive -luser -lhal-dynalib -lservices-dynalib -lsystem-dynalib -lrt-dynalib -lwiring -lcommunication-dynalib -lplatform -lwiring_globals -lnrf5_sdk -llittlefs -lminiz -Wl,--no-whole-archive  -lnosys -L../../../modules/boron/system-part1 -L. -L/Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron/ -L../../../modules/shared/nRF52840 -T./linker.ld -Wl,--defsym,USER_FIRMWARE_IMAGE_SIZE=0x40000 -Wl,--defsym,USER_FIRMWARE_IMAGE_LOCATION=0xB4000 -Wl,-Map,/Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron/Tidal_Sensor_Project.map -Wl,--defsym,__STACKSIZE__=4096 -Wl,--defsym,__STACK_SIZE=4096
+/Users/valentina/.particle/toolchains/gcc-arm/10.2.1/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/bin/ld: warning: ../../../build/target/nrf5_sdk/platform-13-m//libnrf5_sdk.a(nrfx_comp.o) has a corrupt string table index - ignoring
+/Users/valentina/.particle/toolchains/gcc-arm/10.2.1/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/bin/ld: ../../../build/target/nrf5_sdk/platform-13-m//libnrf5_sdk.a: member ../../../build/target/nrf5_sdk/platform-13-m//libnrf5_sdk.a(nrfx_nfct.o) in archive is not an object
+collect2: error: ld returned 1 exit status
+make[3]: *** [/Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project/target/6.3.4/boron/Tidal_Sensor_Project.elf] Error 1
+make[3]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/modules/boron/user-part'
+make[2]: *** [modules/boron/user-part] Error 2
+make[2]: Leaving directory `/Users/valentina/.particle/toolchains/deviceOS/6.3.4/main'
+make[1]: *** [make-main] Error 2
+make[1]: Leaving directory `/Users/valentina/Documents/maker_lab/Tidal_Sensor_Project/Tidal_Sensor_Project'
+make: *** [compile-user] Error 2
